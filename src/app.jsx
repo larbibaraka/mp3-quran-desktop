@@ -1,15 +1,23 @@
 /* eslint-disable react/jsx-indent */
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 export default class App extends React.Component {
   render() {
     return (
-    <div>
-      <Button variant="contained" color="primary">
-        Hello World
-      </Button>
-    </div>
+      <section>
+         <div className="playerWrapper">
+            <div className="left-part">
+
+            </div>
+            <div className="center-part">
+
+            </div>
+            <div className="right-part">
+
+            </div>
+         </div>
+      </section>
     );
   }
 }
