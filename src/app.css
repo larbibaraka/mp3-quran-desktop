@@ -31,4 +31,6 @@
  }
 .playlist-section{
     justify-content: flex-end;
+    width: 300px;
+    border-left: 1px solid #e5e5e5;
 }

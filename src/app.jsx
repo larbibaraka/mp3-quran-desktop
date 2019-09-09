@@ -68,7 +68,6 @@ export default function App() {
 
   async function setSuras(e, suras) {
     const souras = suras.split(",");
-    //we need to work it here :)
     const urlSouras = "http://api.alquran.cloud/v1/surah";
     /*
       data -> 
@@ -86,24 +85,8 @@ export default function App() {
         let element =  data.find(item => item.number === parseInt(x));
         souras[index] = element;
      }) 
-    
-    
-      
-
-
-
-
-    /*let sourats = souras.map(x => {
-      console.log('s => 1 ', parseInt(x))
-      data.filter(soura => {
-        console.log('soura 2  => ', soura.number)
-         soura.number === x;
-      });
-    });*/
-
-    console.log("your sourats is : ", souras);
-
-    setSouras(souras);
+      console.log("your sourats is : ", souras);
+      setSouras(souras);
   }
   return (
     <section>
@@ -141,7 +124,7 @@ export default function App() {
               </form>
             </div>
             <div className="recetors-section">
-              {/* <PlaylistSection souras={souras} /> */}
+              <PlaylistSection souras={souras} />
             </div>
           </div>
         </div>

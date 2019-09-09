@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     boxShadow: '0 3px 5px 2px rgb(232, 232, 232)',
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     marginBottom: '1%',
-    paddingLeft : '11%' 
+    textAlign: 'center'
   }
 }));
 

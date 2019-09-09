@@ -20,9 +20,10 @@ const useStyles = makeStyles(theme => ({
   ListItem : {
     // background: "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
     boxShadow: '0 3px 5px 2px rgb(232, 232, 232)',
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    // background: 'linear-gradient(to right, #b2fefa, #0ed2f7 90%) ',
     marginBottom: '1%',
-    paddingLeft : '11%' 
+    textAlign: 'center'
+    
   }
 }));
 
@@ -35,9 +36,22 @@ export default function PlaylistSection({souras}) {
     <List className={classes.root}>
       {souras.map((soura , index) => (
         <ListItem button alignItems="flex-start" key={index} className={classes.ListItem}>
-          <ListItemText
-            primary={soura}
-            />
+           <ListItemText
+            primary={soura.name}
+            secondary={
+              <React.Fragment >
+                <Typography
+                  component="span"
+                  variant="body2"
+                  className={classes.inline}
+                  color="textPrimary"
+                  >
+                 {` رقم  السورة : ${soura.number}`}
+                </Typography>
+                {`  عدد الأيات  : ${soura.numberOfAyahs}`}
+              </React.Fragment>
+            }
+          />
         </ListItem>
       ))}
     </List>
