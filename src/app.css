@@ -34,3 +34,10 @@
     width: 300px;
     border-left: 1px solid #e5e5e5;
 }
+
+.center-part{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+}

@@ -7,7 +7,7 @@ import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import PeopleSection from "./components/PeopleSection";
 import PlaylistSection from "./components/PlaylistSection";
-
+import MainSection from './components/MainSection';
 export default function App() {
   const useStyles = makeStyles(theme => ({
     container: {
@@ -99,7 +99,14 @@ export default function App() {
             <PeopleSection recitors={recitors} setSuras={setSuras} />
           </div>
         </div>
-        <div className="center-part"></div>
+        <div className="center-part">
+            <div className="soura-cover">
+              <img src="./quran.jpg"/>
+            </div>
+
+
+
+        </div>
         <div className="right-part">
           <div className="playlist-section">
             <div className="search-section">
