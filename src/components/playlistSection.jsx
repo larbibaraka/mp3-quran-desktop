@@ -26,34 +26,18 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function PlaylistSection({recitors}) {
+export default function PlaylistSection({souras}) {
   const classes = useStyles();
 
   
 
   return (
     <List className={classes.root}>
-      {recitors.map(recitor => (
-        <ListItem button alignItems="flex-start" key={recitor.id} className={classes.ListItem}>
-          <ListItemAvatar>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-          </ListItemAvatar>
+      {souras.map((soura , index) => (
+        <ListItem button alignItems="flex-start" key={index} className={classes.ListItem}>
           <ListItemText
-            primary={recitor.name}
-            secondary={
-              <React.Fragment>
-                <Typography
-                  component="span"
-                  variant="body2"
-                  className={classes.inline}
-                  color="textPrimary"
-                >
-                  {recitor.rewaya}
-                </Typography>
-                {`  عدد السور  : ${recitor.count}`}
-              </React.Fragment>
-            }
-          />
+            primary={soura}
+            />
         </ListItem>
       ))}
     </List>

@@ -6,12 +6,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import PeopleSection from "./components/PeopleSection";
-import PlaylistSection from './components/PlaylistSection';
-
-
-
- 
-
+import PlaylistSection from "./components/PlaylistSection";
 
 export default function App() {
   const useStyles = makeStyles(theme => ({
@@ -60,7 +55,7 @@ export default function App() {
   const classes = useStyles();
 
   const [recitors, setRecitor] = useState([]);
-  const [souras,  setSouras  ] = useState([]);  
+  const [souras, setSouras] = useState([]);
 
   useEffect(async () => {
     // Update the document title using the browser API
@@ -71,8 +66,44 @@ export default function App() {
     setRecitor(data.reciters);
   }, []);
 
-  function setSuras (e , suras) {
-    console.log("your suras is : " , suras);
+  async function setSuras(e, suras) {
+    const souras = suras.split(",");
+    //we need to work it here :)
+    const urlSouras = "http://api.alquran.cloud/v1/surah";
+    /*
+      data -> 
+        number: 1,
+        name: "سُورَةُ ٱلْفَاتِحَةِ",
+        englishName: "Al-Faatiha",
+        englishNameTranslation: "The Opening",
+        numberOfAyahs: 7,
+        revelationType: "Meccan"
+    */
+    const response = await fetch(urlSouras);
+    const { data } = await response.json();
+    
+     souras.map((x, index)=>{
+        let element =  data.find(item => item.number === parseInt(x));
+        souras[index] = element;
+     }) 
+    
+    
+      
+
+
+
+
+    /*let sourats = souras.map(x => {
+      console.log('s => 1 ', parseInt(x))
+      data.filter(soura => {
+        console.log('soura 2  => ', soura.number)
+         soura.number === x;
+      });
+    });*/
+
+    console.log("your sourats is : ", souras);
+
+    setSouras(souras);
   }
   return (
     <section>
@@ -91,7 +122,7 @@ export default function App() {
             </form>
           </div>
           <div className="recetors-section">
-            <PeopleSection recitors={recitors} setSuras={setSuras}/>
+            <PeopleSection recitors={recitors} setSuras={setSuras} />
           </div>
         </div>
         <div className="center-part"></div>
@@ -104,14 +135,13 @@ export default function App() {
                 </IconButton>
                 <InputBase
                   className={classes.input}
-               
                   placeholder="ابحث عن سورة"
                   inputProps={{ "aria-label": "ابحث عن سورة" }}
                 />
               </form>
             </div>
             <div className="recetors-section">
-                <PlaylistSection recitors={recitors} />
+              {/* <PlaylistSection souras={souras} /> */}
             </div>
           </div>
         </div>
