@@ -14,13 +14,17 @@
  .left-part{
      border-right: 1px solid #e5e5e5;
      background: rgb(244, 247, 255);
-     height: 100vh;
+     /* height: 100vh; */
+     /* height: 99vh; */
+     /* overflow-y: auto; */
      width: 370px;
  }
  .search-section{
       border-bottom: 1px solid #e5e5e5;
  }
  .recetors-section{
-     overflow: scroll;
+     overflow-y: auto;
      height: 100%;
+     max-height: 87vh;
+     /* max-height: 600px; */
  }

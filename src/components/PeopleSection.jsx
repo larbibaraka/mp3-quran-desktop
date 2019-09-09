@@ -11,61 +11,60 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
-    background: "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
-    color: "white"
-    // backgroundColor: theme.palette.background.paper,
+    // color: "white"
+    backgroundColor: theme.palette.background.paper,
   },
   inline: {
     display: "inline"
+  },
+  ListItem : {
+    // background: "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
+    boxShadow: '0 3px 5px 2px rgb(232, 232, 232)',
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    marginBottom: '1%',
+    paddingLeft : '11%' 
   }
 }));
 
-
 export default function PeopleSection() {
   const classes = useStyles();
-  
-  const [recitor , setRecitor] =  useState([]);
 
-  useEffect(async() => {
-      // Update the document title using the browser API
-      const url = 'https://mp3quran.net/api/_arabic.json';
-      const response = await fetch(url);
-      const data =  await response.json();
-      console.log("==> ",  data)  
-      setRecitor([{name : 'testHook'}])
-    }, []);
-  
+  const [recitors, setRecitor] = useState([]);
 
-
-
+  useEffect(async () => {
+    // Update the document title using the browser API
+    const url = "https://mp3quran.net/api/_arabic.json";
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log("==> ", data);
+    setRecitor(data.reciters);
+  }, []);
 
   return (
     <List className={classes.root}>
-      <ListItem button alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        </ListItemAvatar>
-        <ListItemText
-          primary="Brunch this weekend?"
-          secondary={
-            <React.Fragment>
-             {recitor.map((recit, index) => 
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-                key={index}
-              >
-              {recit.name}
-              
-              </Typography>
-                )}
-              {" — I'll be in your neighborhood doing errands this…"}
-            </React.Fragment>
-          }
-        />
-      </ListItem>
+      {recitors.map(recitor => (
+        <ListItem button alignItems="flex-start" key={recitor.id} className={classes.ListItem}>
+          <ListItemAvatar>
+            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+          </ListItemAvatar>
+          <ListItemText
+            primary={recitor.name}
+            secondary={
+              <React.Fragment>
+                <Typography
+                  component="span"
+                  variant="body2"
+                  className={classes.inline}
+                  color="textPrimary"
+                >
+                  {recitor.rewaya}
+                </Typography>
+                {`  عدد السور  : ${recitor.count}`}
+              </React.Fragment>
+            }
+          />
+        </ListItem>
+      ))}
     </List>
   );
 }
