@@ -7,6 +7,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
+// import quran from './quran.jpg';
 
 const getSoura = (souras) =>{
   console.log("your souras is : " , souras);
@@ -43,7 +44,7 @@ export default function PeopleSection({recitors, setSuras}) {
       {recitors.map(recitor => (
         <ListItem button alignItems="flex-start" key={recitor.id} className={classes.ListItem} onClick={event => handleListItemClick(event, recitor.suras)} >
           <ListItemAvatar>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+            <Avatar alt="holy quran" src='./quran.jpg' />
           </ListItemAvatar>
           <ListItemText
             primary={recitor.name}

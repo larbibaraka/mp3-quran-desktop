@@ -69,15 +69,6 @@ export default function App() {
   async function setSuras(e, suras) {
     const souras = suras.split(",");
     const urlSouras = "http://api.alquran.cloud/v1/surah";
-    /*
-      data -> 
-        number: 1,
-        name: "سُورَةُ ٱلْفَاتِحَةِ",
-        englishName: "Al-Faatiha",
-        englishNameTranslation: "The Opening",
-        numberOfAyahs: 7,
-        revelationType: "Meccan"
-    */
     const response = await fetch(urlSouras);
     const { data } = await response.json();
     
