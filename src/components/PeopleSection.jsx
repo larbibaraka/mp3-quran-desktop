@@ -8,6 +8,10 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 
+const getSoura = (souras) =>{
+  console.log("your souras is : " , souras);
+}
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
@@ -26,27 +30,31 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function PeopleSection({recitors}) {
+export default function PeopleSection({recitors, setSuras}) {
   const classes = useStyles();
 
-  
+ 
+  function handleListItemClick(event, suras) {
+       setSuras(event , suras);
+  }
 
   return (
     <List className={classes.root}>
       {recitors.map(recitor => (
-        <ListItem button alignItems="flex-start" key={recitor.id} className={classes.ListItem}>
+        <ListItem button alignItems="flex-start" key={recitor.id} className={classes.ListItem} onClick={event => handleListItemClick(event, recitor.suras)} >
           <ListItemAvatar>
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
           </ListItemAvatar>
           <ListItemText
             primary={recitor.name}
             secondary={
-              <React.Fragment>
+              <React.Fragment >
                 <Typography
                   component="span"
                   variant="body2"
                   className={classes.inline}
                   color="textPrimary"
+                
                 >
                   {recitor.rewaya}
                 </Typography>

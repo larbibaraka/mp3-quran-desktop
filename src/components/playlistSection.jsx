@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function playlistSection({recitors}) {
+export default function PlaylistSection({recitors}) {
   const classes = useStyles();
 
   

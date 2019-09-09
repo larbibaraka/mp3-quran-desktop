@@ -6,6 +6,13 @@ import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import PeopleSection from "./components/PeopleSection";
+import PlaylistSection from './components/PlaylistSection';
+
+
+
+ 
+
+
 export default function App() {
   const useStyles = makeStyles(theme => ({
     container: {
@@ -64,8 +71,9 @@ export default function App() {
     setRecitor(data.reciters);
   }, []);
 
-
-
+  function setSuras (e , suras) {
+    console.log("your suras is : " , suras);
+  }
   return (
     <section>
       <div className="playerWrapper">
@@ -83,7 +91,7 @@ export default function App() {
             </form>
           </div>
           <div className="recetors-section">
-            <PeopleSection recitors={recitors} onClick={this.Souras}/>
+            <PeopleSection recitors={recitors} setSuras={setSuras}/>
           </div>
         </div>
         <div className="center-part"></div>
@@ -103,7 +111,7 @@ export default function App() {
               </form>
             </div>
             <div className="recetors-section">
-              <playlistSection recitors={recitors} />
+                <PlaylistSection recitors={recitors} />
             </div>
           </div>
         </div>
