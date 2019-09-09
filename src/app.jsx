@@ -1,13 +1,11 @@
 /* eslint-disable react/jsx-indent */
 import React from "react";
-import FormControl from "@material-ui/core/FormControl";
-import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Fab from "@material-ui/core/Fab";
 import SearchIcon from "@material-ui/icons/Search";
-import Grid from "@material-ui/core/Grid";
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
+import PeopleSection from './components/PeopleSection';
 export default function App() {
   const useStyles = makeStyles(theme => ({
     container: {
@@ -19,7 +17,7 @@ export default function App() {
       padding : '10% 3%',
       display: 'flex',
       alignItems: 'center',
-      width: 400,
+      // width: 400,
     },
     input: {
       marginLeft: theme.spacing(1),
@@ -28,8 +26,8 @@ export default function App() {
       padding: "1% 5%",
       borderRadius: "6px",
       direction:'rtl',
-      boxShadow: '-4px 10px 21px -1px rgba(209,209,209,1)'
-            
+      boxShadow: '-4px 10px 21px -1px rgba(209,209,209,1)',
+      background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
     },
     textField: {
       marginLeft: theme.spacing(1),
@@ -43,8 +41,12 @@ export default function App() {
     },
     iconButton : {
       // border : '1px solid rgba(209,209,209,1)',
-      marginLeft :'2%',
-      boxShadow: '-4px 10px 21px -1px rgba(209,209,209,1)'
+      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+      // border: 0,
+      // borderRadius: 3,
+      boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+      marginRight :'1%',
+      // boxShadow: '-4px 10px 21px -1px rgba(209,209,209,1)'
     }
   }));
   const classes = useStyles();
@@ -64,7 +66,9 @@ export default function App() {
               />
             </form>
           </div>
-          <div className="recetors-section"></div>
+          <div className="recetors-section">
+            <PeopleSection/>
+          </div>
         </div>
         <div className="center-part"></div>
         <div className="right-part">
