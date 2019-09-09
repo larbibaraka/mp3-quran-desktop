@@ -15,11 +15,12 @@
  .left-part{
      border-right: 1px solid #e5e5e5;
      background: rgb(244, 247, 255);
-     /* height: 100vh; */
-     /* height: 99vh; */
-     /* overflow-y: auto; */
-     width: 370px;
+     width: 400px;
+     color: #e5e5e5;
+     font-weight: bold;
+     font-family: 'Roboto' , sans-serif;
  }
+
  .search-section{
       border-bottom: 1px solid #e5e5e5;
  }
@@ -31,13 +32,14 @@
  }
 .playlist-section{
     justify-content: flex-end;
-    width: 300px;
+    width: 230px;
     border-left: 1px solid #e5e5e5;
+    font-family: 'Roboto' , sans-serif;
 }
 
 .center-part{
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 500px;
+    /* max-width: 500px; */
 }
