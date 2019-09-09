@@ -100,12 +100,7 @@ export default function App() {
           </div>
         </div>
         <div className="center-part">
-            <div className="soura-cover">
-              <img src="./quran.jpg"/>
-            </div>
-
-
-
+            <MainSection/>
         </div>
         <div className="right-part">
           <div className="playlist-section">
