@@ -9,7 +9,8 @@
 
  .playerWrapper{
      display: flex;
-     justify-content: stretch;
+     /* justify-content: stretch; */
+     justify-content: space-between;
  }
  .left-part{
      border-right: 1px solid #e5e5e5;
@@ -28,3 +29,6 @@
      max-height: 87vh;
      /* max-height: 600px; */
  }
+.playlist-section{
+    justify-content: flex-end;
+}

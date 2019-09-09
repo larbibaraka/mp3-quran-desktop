@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -26,19 +26,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function PeopleSection() {
+export default function PeopleSection({recitors}) {
   const classes = useStyles();
 
-  const [recitors, setRecitor] = useState([]);
-
-  useEffect(async () => {
-    // Update the document title using the browser API
-    const url = "https://mp3quran.net/api/_arabic.json";
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log("==> ", data);
-    setRecitor(data.reciters);
-  }, []);
+  
 
   return (
     <List className={classes.root}>
