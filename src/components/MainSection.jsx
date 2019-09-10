@@ -13,11 +13,11 @@ const useStyles = makeStyles(theme => ({
   card: {
     display: "flex",
     position: 'fixed',
-    left: '315px',
+    // left: '315px',
     /* right: 0; */
     bottom: '0',
     width: '67%',
-    backgroundColor: 'red',
+    background: 'linear-gradient(to right, #b2fefa, #0ed2f7 90%)',
     color: 'white',
     textAlign: 'center'
   },
@@ -47,47 +47,9 @@ function MainSection() {
   const classes = useStyles();
   const theme = useTheme();
   return (
-    <div className="mainSection-wrapper">
-      <div className="waves">
-       
+      <div className="playerSection">
+
       </div>
-      <Card className={classes.card}>
-        <div className={classes.details}>
-          <CardContent className={classes.content}>
-            <Typography component="h5" variant="h5">
-              Live From Space
-            </Typography>
-            <Typography variant="subtitle1" color="textSecondary">
-              Mac Miller
-            </Typography>
-          </CardContent>
-          <div className={classes.controls}>
-            <IconButton aria-label="previous">
-              {theme.direction === "rtl" ? (
-                <SkipNextIcon />
-              ) : (
-                <SkipPreviousIcon />
-              )}
-            </IconButton>
-            <IconButton aria-label="play/pause">
-              <PlayArrowIcon className={classes.playIcon} />
-            </IconButton>
-            <IconButton aria-label="next">
-              {theme.direction === "rtl" ? (
-                <SkipPreviousIcon />
-              ) : (
-                <SkipNextIcon />
-              )}
-            </IconButton>
-          </div>
-        </div>
-        <CardMedia
-          className={classes.cover}
-          image="./quran.jpg"
-          title="quran"
-        />
-      </Card>
-    </div>
   );
 }
 

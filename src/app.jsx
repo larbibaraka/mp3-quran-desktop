@@ -86,7 +86,7 @@ export default function App() {
     <section>
       <div className={classes.root}>
         <Grid container spacing={1}>
-          <Grid item xs={2}>
+          <Grid item xs={3}>
           <div className="left-part" >
               <div className="search-section">
                 <form className={classes.root}>
@@ -105,12 +105,10 @@ export default function App() {
               </div>
             </div>
           </Grid>
-          <Grid item xs={8}>
-            <div className="center-part">
-              <MainSection />
-            </div>
+          <Grid item xs={6}>
+                <MainSection />
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={3}>
           <div className="right-part">
             <div className="playlist-section">
               <div className="search-section">
