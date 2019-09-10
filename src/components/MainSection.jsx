@@ -12,6 +12,14 @@ import SkipNextIcon from "@material-ui/icons/SkipNext";
 const useStyles = makeStyles(theme => ({
   card: {
     display: "flex",
+    position: 'fixed',
+    left: '315px',
+    /* right: 0; */
+    bottom: '0',
+    width: '67%',
+    backgroundColor: 'red',
+    color: 'white',
+    textAlign: 'center'
   },
   details: {
     display: "flex",

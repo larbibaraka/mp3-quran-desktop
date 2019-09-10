@@ -55,8 +55,7 @@ export default function PeopleSection({recitors, setSuras}) {
                   variant="body2"
                   className={classes.inline}
                   color="textPrimary"
-                
-                >
+                  >
                   {recitor.rewaya}
                 </Typography>
                 {`  عدد السور  : ${recitor.count}`}
