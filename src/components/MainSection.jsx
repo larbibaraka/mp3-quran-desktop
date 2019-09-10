@@ -8,18 +8,18 @@ import Typography from "@material-ui/core/Typography";
 import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
+import CardActions from '@material-ui/core/CardActions';
+
+import Button from '@material-ui/core/Button';
+
+import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles(theme => ({
   card: {
     display: "flex",
-    position: 'fixed',
-    // left: '315px',
-    /* right: 0; */
-    bottom: '0',
-    width: '67%',
-    background: 'linear-gradient(to right, #b2fefa, #0ed2f7 90%)',
-    color: 'white',
-    textAlign: 'center'
+
   },
   details: {
     display: "flex",
@@ -47,9 +47,21 @@ function MainSection() {
   const classes = useStyles();
   const theme = useTheme();
   return (
-      <div className="playerSection">
-
-      </div>
+    <div className="playerSection">
+      <React.Fragment>
+        <CssBaseline />
+        <Container fixed>
+          <Card className={classes.card}>
+            <CardContent>
+              <h1>kjsdkjsdkdsksd</h1>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </Container>
+      </React.Fragment>
+    </div>
   );
 }
 

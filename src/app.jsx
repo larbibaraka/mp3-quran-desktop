@@ -52,7 +52,8 @@ export default function App() {
       boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
       marginRight: "1%"
       // boxShadow: '-4px 10px 21px -1px rgba(209,209,209,1)'
-    }
+    },
+    
   }));
 
   const classes = useStyles();
@@ -105,7 +106,7 @@ export default function App() {
               </div>
             </div>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={6} className="centerpart">
                 <MainSection />
           </Grid>
           <Grid item xs={3}>
