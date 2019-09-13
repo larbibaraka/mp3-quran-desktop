@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import clsx from "clsx";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -14,15 +14,24 @@ import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
+import PlayArrowIcon from "@material-ui/icons/PlayArrow";
+import SkipNextIcon from "@material-ui/icons/SkipNext";
+import VolumeDownIcon from "@material-ui/icons/VolumeDown";
+import VolumeUpIcon from "@material-ui/icons/VolumeUp";
+import RepeatIcon from "@material-ui/icons/Repeat";
+import ShuffleIcon from "@material-ui/icons/Shuffle";
+import VolumeOffIcon from "@material-ui/icons/VolumeOff";
+import Slider from "@material-ui/core/Slider";
+import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 345
+    // maxWidth: 345
   },
   media: {
     height: 0,
-    paddingTop: "56.25%" // 16:9
+    paddingTop: "56.25%", // 16:9
+    blur : 6
   },
   expand: {
     transform: "rotate(0deg)",
@@ -31,14 +40,22 @@ const useStyles = makeStyles(theme => ({
       duration: theme.transitions.duration.shortest
     })
   },
-  expandOpen: {
-    transform: "rotate(180deg)"
+  controls: {
+    display: "flex",
+    alignItems: "center",
+    paddingLeft: theme.spacing(1),
+    paddingBottom: theme.spacing(1)
   },
-  avatar: {
-    backgroundColor: red[500]
+  playIcon: {
+    height: 38,
+    width: 38
+  },
+  SliderMP3 : {
+    color : "black",
   }
 }));
 function MainSection() {
+  const theme = useTheme();
   const classes = useStyles();
   return (
     <div className="playerSection">
@@ -48,14 +65,74 @@ function MainSection() {
           image="./quran.jpg"
           title="Paella dish"
         />
+
+        <Slider
+            defaultValue={0}
+            aria-labelledby="continuous-slider"
+            className={classes.SliderMP3}
+          />
+
         <CardContent>
+          <Typography component="h5" variant="h5">
+            Live From Space
+          </Typography>
+          <Typography variant="subtitle1" color="textSecondary">
+            Mac Miller
+          </Typography>
+          <Grid container spacing={2}>
+            <Grid item>
+              <VolumeDownIcon />
+            </Grid>
+            <Grid item xs>
+              <Slider
+                value="30"
+                // onChange={handleChange}
+                aria-labelledby="continuous-slider"
+              />
+            </Grid>
+            <Grid item>
+              <VolumeUpIcon />
+            </Grid>
+          </Grid>
+          
           <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-            <IconButton aria-label="share">
-              <ShareIcon />
-            </IconButton>
+            <div className={classes.controls}>
+              <IconButton aria-label="previous">
+                {theme.direction === "rtl" ? (
+                  <SkipNextIcon />
+                ) : (
+                  <SkipPreviousIcon />
+                )}
+              </IconButton>
+              <IconButton aria-label="play/pause">
+                <PlayArrowIcon className={classes.playIcon} />
+              </IconButton>
+              <IconButton aria-label="next">
+                {theme.direction === "rtl" ? (
+                  <SkipPreviousIcon />
+                ) : (
+                  <SkipNextIcon />
+                )}
+              </IconButton>
+              <IconButton>
+                <FavoriteIcon />
+              </IconButton>
+              <IconButton>
+                <VolumeDownIcon />
+              </IconButton>
+              <IconButton>
+                <VolumeUpIcon />
+              </IconButton>
+              <IconButton>
+                <VolumeOffIcon />
+              </IconButton>
+              <IconButton>
+                <RepeatIcon />
+              </IconButton>
+              <IconButton>
+                <ShuffleIcon />
+              </IconButton>
+            </div>
           </CardActions>
         </CardContent>
       </Card>
