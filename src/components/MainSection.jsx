@@ -65,13 +65,15 @@ function MainSection() {
           image="./quran.jpg"
           title="Paella dish"
         />
-
-        <Slider
+        <div className="playerslide">
+           <Slider
             defaultValue={0}
             aria-labelledby="continuous-slider"
             className={classes.SliderMP3}
           />
-
+          <span className="timer">03:56/06:00</span>
+        </div>
+       
         <CardContent>
           <Typography component="h5" variant="h5">
             Live From Space
@@ -114,17 +116,10 @@ function MainSection() {
                   <SkipNextIcon />
                 )}
               </IconButton>
-              <IconButton>
+            </div>
+            <div >
+            <IconButton >
                 <FavoriteIcon />
-              </IconButton>
-              <IconButton>
-                <VolumeDownIcon />
-              </IconButton>
-              <IconButton>
-                <VolumeUpIcon />
-              </IconButton>
-              <IconButton>
-                <VolumeOffIcon />
               </IconButton>
               <IconButton>
                 <RepeatIcon />
