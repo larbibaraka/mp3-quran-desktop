@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-indent */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Fab from "@material-ui/core/Fab";
 import Grid from "@material-ui/core/Grid";
@@ -9,6 +9,13 @@ import IconButton from "@material-ui/core/IconButton";
 import PeopleSection from "./components/PeopleSection";
 import PlaylistSection from "./components/PlaylistSection";
 import MainSection from "./components/MainSection";
+
+/** reducer */
+import appReducer from './appReducer';
+ 
+
+
+
 
 export default function App() {
   const useStyles = makeStyles(theme => ({
@@ -58,8 +65,11 @@ export default function App() {
 
   const classes = useStyles();
 
+  const [state, dispatch]  = useReducer(appReducer ,[]);
+
   const [recitors, setRecitor] = useState([]);
   const [souras, setSouras] = useState([]);
+  const [selectedsoura , setselectedsoura] = useState(""); 
 
   useEffect(async () => {
     // Update the document title using the browser API
@@ -109,7 +119,7 @@ export default function App() {
             </div>
           </Grid>
           <Grid item xs={6} className="centerpart">
-            <MainSection />
+            <MainSection  />
           </Grid>
           <Grid item xs={3}>
             <div className="right-part">
@@ -130,6 +140,7 @@ export default function App() {
                   </form>
                 </div>
                 <div className="recetors-section">
+                 
                   <PlaylistSection souras={souras} />
                 </div>
               </div>
