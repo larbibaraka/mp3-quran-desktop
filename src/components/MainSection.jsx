@@ -1,66 +1,64 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
 import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import Collapse from "@material-ui/core/Collapse";
+import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
-import PlayArrowIcon from "@material-ui/icons/PlayArrow";
-import SkipNextIcon from "@material-ui/icons/SkipNext";
-import CssBaseline from "@material-ui/core/CssBaseline";
-
-import CardActions from '@material-ui/core/CardActions';
-
-import Button from '@material-ui/core/Button';
-
-import Container from "@material-ui/core/Container";
-
+import { red } from "@material-ui/core/colors";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ShareIcon from "@material-ui/icons/Share";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 const useStyles = makeStyles(theme => ({
   card: {
-    display: "flex",
-
+    maxWidth: 345
   },
-  details: {
-    display: "flex",
-    flexDirection: "row"
+  media: {
+    height: 0,
+    paddingTop: "56.25%" // 16:9
   },
-  content: {
-    flex: "1 1 auto"
+  expand: {
+    transform: "rotate(0deg)",
+    marginLeft: "auto",
+    transition: theme.transitions.create("transform", {
+      duration: theme.transitions.duration.shortest
+    })
   },
-  cover: {
-    width: 151
+  expandOpen: {
+    transform: "rotate(180deg)"
   },
-  controls: {
-    display: "flex",
-    alignItems: "center",
-    paddingLeft: theme.spacing(1),
-    paddingBottom: theme.spacing(1)
-  },
-  playIcon: {
-    height: 38,
-    width: 38
+  avatar: {
+    backgroundColor: red[500]
   }
 }));
-
 function MainSection() {
   const classes = useStyles();
-  const theme = useTheme();
   return (
     <div className="playerSection">
-      <React.Fragment>
-        <CssBaseline />
-        <Container fixed>
-          <Card className={classes.card}>
-            <CardContent>
-              <h1>kjsdkjsdkdsksd</h1>
-            </CardContent>
-            <CardActions>
-              <Button size="small">Learn More</Button>
-            </CardActions>
-          </Card>
-        </Container>
-      </React.Fragment>
+      <Card className={classes.card}>
+        <CardMedia
+          className={classes.media}
+          image="./quran.jpg"
+          title="Paella dish"
+        />
+        <CardContent>
+          <CardActions disableSpacing>
+            <IconButton aria-label="add to favorites">
+              <FavoriteIcon />
+            </IconButton>
+            <IconButton aria-label="share">
+              <ShareIcon />
+            </IconButton>
+          </CardActions>
+        </CardContent>
+      </Card>
     </div>
   );
 }

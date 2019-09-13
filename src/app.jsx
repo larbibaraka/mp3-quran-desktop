@@ -53,7 +53,7 @@ export default function App() {
       marginRight: "1%"
       // boxShadow: '-4px 10px 21px -1px rgba(209,209,209,1)'
     },
-    
+
   }));
 
   const classes = useStyles();
@@ -76,11 +76,13 @@ export default function App() {
     const response = await fetch(urlSouras);
     const { data } = await response.json();
 
+    // eslint-disable-next-line array-callback-return
     souras.map((x, index) => {
-      let element = data.find(item => item.number === parseInt(x));
+      // eslint-disable-next-line radix
+      const element = data.find((item) => item.number === parseInt(x));
       souras[index] = element;
     });
-    console.log("your sourats is : ", souras);
+    console.log('your sourats is : ', souras);
     setSouras(souras);
   }
   return (
@@ -88,7 +90,7 @@ export default function App() {
       <div className={classes.root}>
         <Grid container spacing={1}>
           <Grid item xs={3}>
-          <div className="left-part" >
+            <div className="left-part" >
               <div className="search-section">
                 <form className={classes.root}>
                   <IconButton className={classes.iconButton} aria-label="search">
@@ -97,7 +99,7 @@ export default function App() {
                   <InputBase
                     className={classes.input}
                     placeholder="ابحث عن قارئ"
-                    inputProps={{ "aria-label": "ابحث عن قارئ" }}
+                    inputProps={{ 'aria-label': 'ابحث عن قارئ' }}
                   />
                 </form>
               </div>
@@ -107,32 +109,32 @@ export default function App() {
             </div>
           </Grid>
           <Grid item xs={6} className="centerpart">
-                <MainSection />
+            <MainSection />
           </Grid>
           <Grid item xs={3}>
-          <div className="right-part">
-            <div className="playlist-section">
-              <div className="search-section">
-                <form className={classes.root}>
-                  <IconButton
-                    className={classes.iconButton}
-                    aria-label="search"
-                  >
-                    <SearchIcon />
-                  </IconButton>
-                  <InputBase
-                    className={classes.input}
-                    placeholder="ابحث عن سورة"
-                    inputProps={{ "aria-label": "ابحث عن سورة" }}
-                  />
-                </form>
-              </div>
-              <div className="recetors-section">
-                <PlaylistSection souras={souras} />
+            <div className="right-part">
+              <div className="playlist-section">
+                <div className="search-section">
+                  <form className={classes.root}>
+                    <IconButton
+                      className={classes.iconButton}
+                      aria-label="search"
+                    >
+                      <SearchIcon />
+                    </IconButton>
+                    <InputBase
+                      className={classes.input}
+                      placeholder="ابحث عن سورة"
+                      inputProps={{ 'aria-label': 'ابحث عن سورة' }}
+                    />
+                  </form>
+                </div>
+                <div className="recetors-section">
+                  <PlaylistSection souras={souras} />
+                </div>
               </div>
             </div>
-          </div>
-          </Grid>>
+          </Grid>
         </Grid>
       </div>
     </section>

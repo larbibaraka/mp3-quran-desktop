@@ -1,47 +1,57 @@
- body{
-    /* background: #1A2980;  fallback for old browsers */
-    /* background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);  Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to right, #26D0CE, #1A2980); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: rgb(244, 247, 255);
-    overflow: hidden;
-    margin: 0;
- }
+body {
+  /* background: #1A2980;  fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);  Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #26D0CE, #1A2980); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: rgb(244, 247, 255);
+  overflow: hidden;
+  margin: 0;
+}
 
- .playerWrapper{
-     /*display: flex;
+.playerWrapper {
+  /*display: flex;
      justify-content: space-between;*/
- }
- .left-part{
-     border-right: 1px solid #e5e5e5;
-     background: rgb(244, 247, 255);
-     /* width: 400px; */
-     color: #e5e5e5;
-     font-weight: bold;
-     font-family: Arial, Helvetica, sans-serif
- }
- .search-section{
-      border-bottom: 1px solid #e5e5e5;
- }
- .recetors-section{
-     overflow-y: auto;
-     height: 100%;
-     /* max-height: 87vh; */
-     max-height: 95vh;
-     /* max-height: 600px; */
- }
-.playlist-section{
-    /* justify-content: flex-end; */
-    /* width: 230px; */
-    border-left: 1px solid #e5e5e5;
-    font-family: 'Roboto' , sans-serif;
 }
-.centerpart{
-    display: flex!important;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.left-part {
+  border-right: 1px solid #e5e5e5;
+  background: rgb(244, 247, 255);
+  /* width: 400px; */
+  color: #e5e5e5;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
- .playerSection{
-     width: 100%;
-     max-width: 500px;
- }
+.search-section {
+  border-bottom: 1px solid #e5e5e5;
+}
+.recetors-section {
+  overflow-y: auto;
+  height: 100%;
+  /* max-height: 87vh; */
+  max-height: 95vh;
+  /* max-height: 600px; */
+}
+.playlist-section {
+  /* justify-content: flex-end; */
+  /* width: 230px; */
+  border-left: 1px solid #e5e5e5;
+  font-family: "Roboto", sans-serif;
+}
+.centerpart {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #D3CCE3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+.playerSection {
+  width: 100%;
+  max-width: 500px;
+   
+}
+
+.image-lecture {
+    
+    
+}
