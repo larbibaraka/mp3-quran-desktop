@@ -47,6 +47,7 @@ body {
 
 .playerslide {
   background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+  
   /* margin-left: 1%; */
   display: flex;
   padding: 1% 3%;
@@ -56,4 +57,12 @@ body {
   margin-left: 2%;
   font-style: italic;
   font-weight: bold;
+}
+.mainActions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+  
+  
 }

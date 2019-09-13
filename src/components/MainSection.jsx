@@ -74,28 +74,13 @@ function MainSection() {
           <span className="timer">03:56/06:00</span>
         </div>
        
-        <CardContent>
+        <CardContent className="mainActions">
           <Typography component="h5" variant="h5">
             Live From Space
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
             Mac Miller
           </Typography>
-          <Grid container spacing={2}>
-            <Grid item>
-              <VolumeDownIcon />
-            </Grid>
-            <Grid item xs>
-              <Slider
-                value="30"
-                // onChange={handleChange}
-                aria-labelledby="continuous-slider"
-              />
-            </Grid>
-            <Grid item>
-              <VolumeUpIcon />
-            </Grid>
-          </Grid>
           
           <CardActions disableSpacing>
             <div className={classes.controls}>
@@ -129,6 +114,21 @@ function MainSection() {
               </IconButton>
             </div>
           </CardActions>
+          <Grid container spacing={2}>
+            <Grid item>
+              <VolumeDownIcon />
+            </Grid>
+            <Grid item xs>
+              <Slider
+                value="30"
+                // onChange={handleChange}
+                aria-labelledby="continuous-slider"
+              />
+            </Grid>
+            <Grid item>
+              <VolumeUpIcon />
+            </Grid>
+          </Grid>
         </CardContent>
       </Card>
     </div>
